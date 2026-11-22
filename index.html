@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101c2b">
-  <meta name="description" content="أنا حمزة إسماعيل، طالب صف عاشر من سوريا. بحب الفيزياء والبرمجة، وعم أشتغل على مشاريع بالتعليم والعمل المجتمعي.">
+  <meta name="description" content="أنا حمزة إسماعيل، عمري 16 سنة ومن سوريا. بحب الفيزياء والبرمجة، وعم أشتغل على مشاريع بالتعليم والعمل المجتمعي.">
   <title>حمزة إسماعيل — عنّي ومشاريعي</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -108,6 +108,7 @@
     .credential p { font-size: 13px; margin: 0; }
     .projects { background: #f0efe9; }
     .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+    .project-links { display: flex; justify-content: center; margin-top: 18px; }
     .project-card { min-height: 257px; display: flex; flex-direction: column; padding: 24px; border-radius: 21px; border: 1px solid #e6e3da; background: var(--white); transition: .22s ease; }
     .project-card:hover { transform: translateY(-4px); box-shadow: 0 17px 36px rgba(14,37,60,.085); border-color: #efd880; }
     .project-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
@@ -211,7 +212,7 @@
     <nav class="nav shell" aria-label="Main navigation">
       <a class="brand" href="#home" aria-label="Hamza Ismael home">
         <span class="brand-mark">HS</span>
-        <span class="brand-copy"><span>حمزة إسماعيل</span><small data-ar="ملف شخصي" data-en="Personal page">ملف شخصي</small></span>
+        <span class="brand-copy"><span data-ar="حمزة إسماعيل" data-en="Hamza Ismael">حمزة إسماعيل</span><small data-ar="ملف شخصي" data-en="Personal page">ملف شخصي</small></span>
       </a>
       <div class="nav-links" id="navLinks">
         <a href="#about" data-ar="عنّي" data-en="About">عنّي</a>
@@ -238,7 +239,7 @@
     <section class="hero" id="home">
       <div class="hero-grid shell">
         <div class="hero-content">
-          <span class="eyebrow" data-ar="طالب صف عاشر · مهتم بالفيزياء" data-en="10th-grade student · into physics">طالب صف عاشر · مهتم بالفيزياء</span>
+          <span class="eyebrow" data-ar="عمري 16 سنة · مهتم بالفيزياء" data-en="16 years old · into physics">عمري 16 سنة · مهتم بالفيزياء</span>
           <h1><span data-ar="أنا حمزة،" data-en="I’m Hamza,">أنا حمزة،</span><br><span class="accent" data-ar="بحب أفهم، وأجرّب، وأبني." data-en="I like to learn by building.">بحب أفهم، وأجرّب، وأبني.</span></h1>
           <p class="hero-copy" data-ar="أنا طالب من سوريا. بحب الفيزياء والبرمجة، وبحاول أطلع بتعلّمي من الدفتر لمشاريع وأفكار تفيد الناس. هون بتعرّفوا عليّ وعلى الأشياء اللي عم بشتغل عليها." data-en="I’m a student from Syria. I like physics and coding, and I try to take what I learn beyond the notebook—into projects and ideas that can help people. Here’s a little about me and what I’m working on.">أنا طالب من سوريا. بحب الفيزياء والبرمجة، وبحاول أطلع بتعلّمي من الدفتر لمشاريع وأفكار تفيد الناس. هون بتعرّفوا عليّ وعلى الأشياء اللي عم بشتغل عليها.</p>
           <div class="hero-actions">
@@ -256,7 +257,7 @@
           <span class="floating-label label-top" data-ar="الفيزياء" data-en="Physics">الفيزياء</span>
           <span class="floating-label label-bottom" data-ar="فكرة ← تجربة ← مشروع" data-en="Idea → try → build">فكرة ← تجربة ← مشروع</span>
         </div>
-        <div class="hero-foot"><span data-ar="العمر 16" data-en="Age 16">العمر 16</span><span data-ar="الصف العاشر" data-en="10th grade">الصف العاشر</span><span data-ar="سوريا" data-en="Syria">سوريا</span><span data-ar="الفريق الوطني للفيزياء" data-en="National Physics Team">الفريق الوطني للفيزياء</span></div>
+        <div class="hero-foot"><span data-ar="العمر 16" data-en="Age 16">العمر 16</span><span data-ar="سوريا" data-en="Syria">سوريا</span><span data-ar="الفريق الوطني للفيزياء" data-en="National Physics Team">الفريق الوطني للفيزياء</span></div>
       </div>
     </section>
 
@@ -264,7 +265,7 @@
       <div class="shell">
         <div class="section-head">
           <div><div class="section-kicker" data-ar="عنّي باختصار" data-en="A little about me">عنّي باختصار</div><h2 data-ar="بتعلّم بالتجربة." data-en="I learn by trying things out.">بتعلّم بالتجربة.</h2></div>
-          <p class="section-intro" data-ar="أنا حمزة إسماعيل، طالب صف عاشر من سوريا. اللي بشدّني هو الفيزياء والذكاء الاصطناعي والبحث العلمي، وبحب كمان أشتغل على أشياء إلها فائدة للناس." data-en="I’m Hamza Ismael, a 10th-grade student from Syria. I’m drawn to physics, AI and research, and I also like working on things that can be useful to people.">أنا حمزة إسماعيل، طالب صف عاشر من سوريا. اللي بشدّني هو الفيزياء والذكاء الاصطناعي والبحث العلمي، وبحب كمان أشتغل على أشياء إلها فائدة للناس.</p>
+          <p class="section-intro" data-ar="أنا حمزة إسماعيل، عمري 16 سنة ومن سوريا. اللي بشدّني هو الفيزياء والذكاء الاصطناعي والبحث العلمي، وبحب كمان أشتغل على أشياء إلها فائدة للناس." data-en="I’m Hamza Ismael, 16 years old and from Syria. I’m drawn to physics, AI and research, and I also like working on things that can be useful to people.">أنا حمزة إسماعيل، عمري 16 سنة ومن سوريا. اللي بشدّني هو الفيزياء والذكاء الاصطناعي والبحث العلمي، وبحب كمان أشتغل على أشياء إلها فائدة للناس.</p>
         </div>
         <div class="about-grid">
           <article class="about-card">
@@ -274,6 +275,7 @@
               <div class="focus-item"><i>01</i><span data-ar="الفيزياء والتفكير العلمي" data-en="Physics and scientific thinking">الفيزياء والتفكير العلمي</span></div>
               <div class="focus-item"><i>02</i><span data-ar="البرمجة والذكاء الاصطناعي" data-en="Coding and artificial intelligence">البرمجة والذكاء الاصطناعي</span></div>
               <div class="focus-item"><i>03</i><span data-ar="التعليم والعمل المجتمعي" data-en="Education and community work">التعليم والعمل المجتمعي</span></div>
+              <div class="focus-item"><i>04</i><span data-ar="بحب الشطرنج" data-en="I enjoy chess">بحب الشطرنج</span></div>
             </div>
           </article>
           <article class="about-card">
@@ -299,8 +301,9 @@
           <article class="project-card"><div class="project-top"><span class="project-icon">Y</span><span class="project-tag" data-ar="تعليم وفرص" data-en="Learning & opportunities">تعليم وفرص</span></div><h3>YourWay</h3><p data-ar="منصة بتجمع فرص المنح والدورات والبرامج التعليمية، وبتخلّي الوصول للمعلومات أوضح وأسهل للشباب." data-en="A platform bringing scholarships, courses and learning programs together, so young people can find clear information more easily.">منصة بتجمع فرص المنح والدورات والبرامج التعليمية، وبتخلّي الوصول للمعلومات أوضح وأسهل للشباب.</p></article>
           <article class="project-card"><div class="project-top"><span class="project-icon">✓</span><span class="project-tag" data-ar="معلومات صحية" data-en="Health information">معلومات صحية</span></div><h3>Health Information Checker</h3><p data-ar="أداة تعليمية لمراجعة المعلومات الصحية والرجوع لمصادر موثوقة. الهدف نفكّر ونتحقق—مو نشخّص أو نوصف علاج." data-en="An educational tool for checking health information against reliable sources. The goal is to think and verify—not to diagnose or prescribe.">أداة تعليمية لمراجعة المعلومات الصحية والرجوع لمصادر موثوقة. الهدف نفكّر ونتحقق—مو نشخّص أو نوصف علاج.</p></article>
           <article class="project-card"><div class="project-top"><span class="project-icon">V</span><span class="project-tag" data-ar="ملابس مطبوعة" data-en="Custom apparel">ملابس مطبوعة</span></div><h3>Void</h3><p data-ar="علامة ملابس بشتغل عليها، فيها قطع مطبوعة حسب الطلب—هوديز، بيجامات، سويترات وأشياء تانية." data-en="My clothing brand, with custom-printed pieces—hoodies, pajamas, sweaters and more.">علامة ملابس بشتغل عليها، فيها قطع مطبوعة حسب الطلب—هوديز، بيجامات، سويترات وأشياء تانية.</p></article>
-          <article class="project-card"><div class="project-top"><span class="project-icon">S</span><span class="project-tag" data-ar="منصة رقمية" data-en="Digital platform">منصة رقمية</span></div><h3>Visa Sheikh Badr</h3><p data-ar="منصة أطلقتها في الشيخ بدر. لسا عم أرتّب وصفها، وما بدي أكتب تفاصيل مش متأكد منها." data-en="A platform I launched in Sheikh Badr. I’m still putting its description together, and don’t want to add details I can’t confirm.">منصة أطلقتها في الشيخ بدر. لسا عم أرتّب وصفها، وما بدي أكتب تفاصيل مش متأكد منها.</p></article>
+          <article class="project-card"><div class="project-top"><span class="project-icon">♟</span><span class="project-tag" data-ar="نادي" data-en="Club">نادي</span></div><h3 data-ar="نادي الشطرنج" data-en="Chess Club">نادي الشطرنج</h3><p data-ar="أنشأت نادي شطرنج، وبحب الشطرنج." data-en="I created a chess club, and I like chess.">أنشأت نادي شطرنج، وبحب الشطرنج.</p></article>
         </div>
+        <div class="project-links"><a class="button button-ghost" href="https://github.com/hsi-sy" target="_blank" rel="me noopener noreferrer"><span data-ar="شوف أعمالي على GitHub" data-en="See my work on GitHub">شوف أعمالي على GitHub</span><span aria-hidden="true">↗</span></a></div>
         <div class="health-note"><strong data-ar="ملاحظة عن Health Information Checker:" data-en="About Health Information Checker:">ملاحظة عن Health Information Checker:</strong> <span data-ar="تعليمي فقط؛ ما بيشخّص، وما بيوصف علاج، وما بيستبدل الطبيب." data-en="It’s educational only; it does not diagnose, prescribe treatment or replace a clinician.">تعليمي فقط؛ ما بيشخّص، وما بيوصف علاج، وما بيستبدل الطبيب.</span></div>
       </div>
     </section>
@@ -328,7 +331,7 @@
       </div>
     </section>
   </main>
-  <footer><div class="shell footer-row"><span class="footer-brand">حمزة إسماعيل</span><span data-ar="ملفي الشخصي · نسخة بسيطة عنّي وعن شغلي" data-en="My personal page · a simple look at me and my work">ملفي الشخصي · نسخة بسيطة عنّي وعن شغلي</span><span data-ar="روابطي كلها فوق" data-en="All my accounts above">روابطي كلها فوق</span></div></footer>
+  <footer><div class="shell footer-row"><span class="footer-brand" data-ar="حمزة إسماعيل" data-en="Hamza Ismael">حمزة إسماعيل</span><span data-ar="ملفي الشخصي · نسخة بسيطة عنّي وعن شغلي" data-en="My personal page · a simple look at me and my work">ملفي الشخصي · نسخة بسيطة عنّي وعن شغلي</span><span data-ar="روابطي كلها فوق" data-en="All my accounts above">روابطي كلها فوق</span></div></footer>
   <script>
     (() => {
       const html = document.documentElement;
@@ -337,8 +340,8 @@
       const navLinks = document.getElementById('navLinks');
       const pageTitle = { ar: 'حمزة إسماعيل — عنّي ومشاريعي', en: 'Hamza Ismael — About me & my projects' };
       const pageDescription = {
-        ar: 'أنا حمزة إسماعيل، طالب صف عاشر من سوريا. بحب الفيزياء والبرمجة، وعم أشتغل على مشاريع بالتعليم والعمل المجتمعي.',
-        en: 'I’m Hamza Ismael, a 10th-grade student from Syria. I like physics and coding, and I’m working on projects around education and community work.'
+        ar: 'أنا حمزة إسماعيل، عمري 16 سنة ومن سوريا. بحب الفيزياء والبرمجة، وعم أشتغل على مشاريع بالتعليم والعمل المجتمعي.',
+        en: 'I’m Hamza Ismael, 16, from Syria. I like physics and coding, and I’m working on projects around education and community work.'
       };
       function setLanguage(lang) {
         html.lang = lang;
