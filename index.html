@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101c2b">
+  <meta name="description" content="أنا حمزة إسماعيل، طالب صف عاشر من سوريا. بحب الفيزياء والبرمجة، وعم أشتغل على مشاريع بالتعليم والعمل المجتمعي.">
+  <title>حمزة إسماعيل — عنّي ومشاريعي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #101c2b;
+      --navy-2: #182b40;
+      --ink: #17263a;
+      --muted: #677487;
+      --line: #e8e6df;
+      --paper: #f7f6f1;
+      --white: #fffefa;
+      --yellow: #f2c84b;
+      --yellow-soft: #fff2c4;
+      --yellow-deep: #9d7410;
+      --teal: #46c9bd;
+      --shadow: 0 18px 55px rgba(16, 28, 43, .075);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Tajawal', Tahoma, Arial, sans-serif; line-height: 1.72; text-rendering: optimizeLegibility; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .shell { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+    .topbar { position: sticky; inset-block-start: 0; z-index: 20; background: rgba(255,254,250,.94); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(232,230,223,.9); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 900; letter-spacing: -.03em; }
+    .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 14px; background: var(--yellow); color: var(--navy); font-size: 14px; letter-spacing: .03em; box-shadow: 3px 3px 0 var(--navy); }
+    .brand-copy { display: grid; line-height: 1.1; }
+    .brand-copy small { color: var(--muted); font-size: 11px; font-weight: 700; margin-top: 5px; }
+    .nav-links { display: flex; align-items: center; gap: clamp(16px, 3vw, 30px); color: #53647a; font-size: 14px; font-weight: 800; }
+    .nav-links a:hover { color: var(--yellow-deep); }
+    .nav-tools { display: flex; align-items: center; gap: 9px; }
+    .lang-button, .menu-button { min-height: 40px; border: 1px solid var(--line); color: var(--ink); background: var(--white); border-radius: 999px; padding: 0 15px; font-size: 12px; font-weight: 900; cursor: pointer; transition: .2s ease; }
+    .lang-button:hover, .menu-button:hover { border-color: var(--yellow); background: var(--yellow-soft); }
+    .menu-button { display: none; width: 42px; padding: 0; font-size: 18px; }
+    .social-icons { display: flex; align-items: center; gap: 6px; }
+    .social-icon-link { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; color: var(--navy); background: #f4f0e3; border: 1px solid #e8e2d2; transition: .2s ease; }
+    .social-icon-link:hover { color: var(--navy); background: var(--yellow); border-color: var(--yellow); transform: translateY(-2px); }
+    .social-mark { width: 18px; height: 18px; display: block; fill: currentColor; }
+    .instagram-mark { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .icon-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+    .hero { background: var(--navy); color: #f7f8f8; overflow: hidden; position: relative; }
+    .hero::before { content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%; border: 1px solid rgba(242,200,75,.16); inset-inline-start: -315px; inset-block-start: -330px; box-shadow: 0 0 0 42px rgba(242,200,75,.025), 0 0 0 88px rgba(242,200,75,.018); pointer-events: none; }
+    .hero::after { content: ""; position: absolute; width: 11px; height: 11px; border-radius: 50%; background: var(--yellow); inset-inline-end: 8%; inset-block-start: 13%; box-shadow: 0 0 0 9px rgba(242,200,75,.09); }
+    .hero-grid { min-height: 570px; display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: clamp(32px, 6vw, 82px); padding-block: 70px 82px; position: relative; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--yellow); font-size: 13px; font-weight: 900; }
+    .eyebrow::before { content: ""; width: 23px; height: 2px; background: var(--yellow); border-radius: 5px; }
+    h1 { max-width: 720px; margin: 16px 0 17px; font-size: clamp(44px, 6.2vw, 76px); line-height: 1.13; letter-spacing: -.045em; font-weight: 900; }
+    h1 .accent { color: var(--yellow); }
+    .hero-copy { max-width: 570px; margin: 0; color: #c4ced7; font-size: clamp(17px, 1.65vw, 19px); font-weight: 500; line-height: 1.9; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 28px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 0 20px; border-radius: 999px; font-size: 14px; font-weight: 900; transition: transform .2s ease, background .2s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: var(--navy); background: var(--yellow); box-shadow: 0 7px 18px rgba(242,200,75,.16); }
+    .button-primary:hover { background: #ffda6b; }
+    .button-ghost { color: #f4f6f7; border: 1px solid rgba(231,242,250,.24); }
+    .button-ghost:hover { background: rgba(255,255,255,.08); }
+    .hero-art { min-height: 355px; display: grid; place-items: center; position: relative; isolation: isolate; }
+    .hero-art::before { content: ""; position: absolute; inset: 14px -18px 0 10px; border: 1px solid rgba(242,200,75,.21); border-radius: 36px; transform: rotate(-3deg); z-index: -1; }
+    .hero-art::after { content: ""; position: absolute; width: 176px; height: 176px; border: 1px solid rgba(70,201,189,.24); border-radius: 50%; z-index: -2; inset-inline-end: -18px; inset-block-start: 0; }
+    .note-sheet { width: min(420px, 95%); min-height: 286px; padding: 25px 27px; color: var(--navy); background: #fffdf5; border-radius: 24px; box-shadow: 0 24px 65px rgba(0,0,0,.24); transform: rotate(2deg); position: relative; overflow: hidden; }
+    .note-sheet::before { content: ""; position: absolute; inset-block: 0; inset-inline-start: 22px; width: 1px; background: rgba(242,200,75,.75); }
+    .note-sheet::after { content: ""; position: absolute; width: 150px; height: 150px; border-radius: 50%; background: var(--yellow-soft); inset-inline-end: -58px; inset-block-end: -74px; }
+    .note-top { display: flex; justify-content: space-between; align-items: center; color: #83909b; font-size: 11px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; direction: ltr; }
+    .note-top .pin { width: 10px; height: 10px; border-radius: 50%; background: var(--yellow); box-shadow: 0 0 0 5px var(--yellow-soft); }
+    .note-title { margin-top: 23px; font-size: 13px; font-weight: 700; color: #627187; }
+    .note-title strong { display: block; margin-top: 3px; color: var(--navy); font-size: 24px; font-weight: 900; }
+    .sketch { position: relative; width: 145px; height: 83px; margin: 7px auto 3px; display: grid; place-items: center; }
+    .sketch .ring { position: absolute; width: 128px; height: 48px; border: 1px solid #c4ab51; border-radius: 50%; transform: rotate(-23deg); }
+    .sketch .ring.two { width: 106px; height: 69px; transform: rotate(38deg); border-color: #6ab8af; }
+    .sketch .core { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 17px; background: var(--yellow); box-shadow: 3px 3px 0 var(--navy); font-size: 19px; font-weight: 900; z-index: 1; }
+    .sketch .dot { position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--teal); inset-inline-end: 18px; inset-block-start: 16px; }
+    .note-tags { display: flex; gap: 8px; flex-wrap: wrap; direction: ltr; justify-content: center; position: relative; z-index: 1; }
+    .note-tags span { padding: 5px 9px; border: 1px solid #e9e5d7; border-radius: 999px; color: #56687a; background: #fffefa; font-size: 10px; font-weight: 800; }
+    .floating-label { position: absolute; display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; color: #fffdf5; font-size: 12px; font-weight: 900; background: #21364b; border: 1px solid rgba(242,200,75,.2); border-radius: 999px; box-shadow: 0 12px 30px rgba(0,0,0,.2); }
+    .floating-label::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--yellow); }
+    .label-top { inset-block-start: 27px; inset-inline-start: 0; }
+    .label-bottom { inset-block-end: 25px; inset-inline-end: 0; }
+    .hero-foot { position: absolute; inset-inline-start: 0; inset-block-end: 26px; display: flex; gap: 24px; color: #aab7c4; font-size: 12px; font-weight: 700; }
+    .hero-foot span { display: inline-flex; align-items: center; gap: 8px; }
+    .hero-foot span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--yellow); }
+    .section { padding-block: 98px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 38px; }
+    .section-kicker { color: var(--yellow-deep); font-size: 13px; font-weight: 900; }
+    h2 { margin: 7px 0 0; font-size: clamp(34px, 4vw, 48px); line-height: 1.2; letter-spacing: -.04em; font-weight: 900; }
+    .section-intro { max-width: 435px; margin: 0; color: var(--muted); font-size: 16px; font-weight: 500; }
+    .about-grid { display: grid; grid-template-columns: .88fr 1.12fr; gap: 22px; }
+    .about-card { padding: clamp(25px, 4vw, 40px); border-radius: var(--radius); background: var(--white); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .about-card h3 { margin: 0 0 12px; font-size: 25px; font-weight: 900; }
+    .about-card p { margin: 0; color: var(--muted); font-size: 15px; font-weight: 500; }
+    .focus-list { display: grid; gap: 12px; margin-top: 22px; }
+    .focus-item { display: flex; align-items: center; gap: 12px; color: #40526a; font-size: 14px; font-weight: 800; }
+    .focus-item i { flex: 0 0 30px; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 10px; background: var(--yellow-soft); color: var(--yellow-deep); font-style: normal; font-size: 12px; font-weight: 900; }
+    .credentials { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .credential { min-height: 149px; padding: 20px; border-radius: 18px; background: #faf9f4; border: 1px solid #eeece5; }
+    .credential-top { display: flex; justify-content: space-between; gap: 10px; color: var(--yellow-deep); font-size: 12px; font-weight: 900; }
+    .credential h4 { margin: 13px 0 4px; font-size: 17px; line-height: 1.4; font-weight: 900; }
+    .credential p { font-size: 13px; margin: 0; }
+    .projects { background: #f0efe9; }
+    .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+    .project-card { min-height: 257px; display: flex; flex-direction: column; padding: 24px; border-radius: 21px; border: 1px solid #e6e3da; background: var(--white); transition: .22s ease; }
+    .project-card:hover { transform: translateY(-4px); box-shadow: 0 17px 36px rgba(14,37,60,.085); border-color: #efd880; }
+    .project-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .project-icon { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 14px; color: var(--navy); background: var(--yellow); font-size: 18px; font-weight: 900; }
+    .project-tag { border: 1px solid #e9e6dd; border-radius: 999px; padding: 5px 10px; color: #6b7785; background: #fbfaf6; font-size: 11px; font-weight: 800; white-space: nowrap; }
+    .project-card h3 { margin: 18px 0 7px; font-size: 21px; line-height: 1.35; letter-spacing: -.02em; font-weight: 900; }
+    .project-card p { margin: 0; color: var(--muted); font-size: 14px; font-weight: 500; }
+    .health-note { margin-top: 17px; padding: 16px 19px; border-radius: 15px; color: #42536a; background: #e5f2ef; border: 1px solid #d6e8e3; font-size: 13px; }
+    .health-note strong { color: var(--navy); font-weight: 900; }
+    .skills-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 45px; align-items: start; }
+    .skills-copy p { max-width: 400px; color: var(--muted); font-size: 15px; font-weight: 500; }
+    .skills-board { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill-chip { padding: 10px 15px; border-radius: 999px; border: 1px solid #e5e2d8; background: var(--white); color: #344a63; font-size: 13px; font-weight: 800; box-shadow: 0 4px 14px rgba(16,33,57,.025); }
+    .skill-chip.featured { background: var(--navy); color: white; border-color: var(--navy); }
+    .contact { padding-block: 0 88px; }
+    .contact-card { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: clamp(30px, 5vw, 54px); border-radius: 30px; color: #f7f8f8; background: var(--navy); position: relative; overflow: hidden; }
+    .contact-card::after { content: ""; position: absolute; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(242,200,75,.28); inset-inline-end: -90px; inset-block-end: -170px; box-shadow: 0 0 0 28px rgba(242,200,75,.04), 0 0 0 64px rgba(242,200,75,.025); }
+    .contact-copy, .contact-action { position: relative; z-index: 1; }
+    .contact-copy h2 { margin-top: 7px; }
+    .contact-copy p { max-width: 530px; color: #c4ced7; font-size: 15px; margin: 10px 0 0; }
+    .contact-action { flex: 0 0 auto; }
+    .social-grid { display: grid; grid-template-columns: repeat(2, minmax(145px, 1fr)); gap: 9px; min-width: 340px; }
+    .social-link { min-height: 61px; display: flex; align-items: center; gap: 9px; padding: 9px 11px; color: #f7f8f8; background: rgba(255,255,255,.065); border: 1px solid rgba(255,255,255,.13); border-radius: 14px; transition: .2s ease; }
+    .social-link:hover { background: rgba(255,255,255,.12); border-color: rgba(242,200,75,.58); transform: translateY(-2px); }
+    .social-icon { flex: 0 0 34px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 11px; color: var(--navy); background: var(--yellow); }
+    .social-copy { min-width: 0; display: grid; line-height: 1.2; }
+    .social-copy strong { font-size: 13px; font-weight: 900; }
+    .social-copy small { margin-top: 4px; color: #c4ced7; font-size: 10px; font-weight: 700; direction: ltr; unicode-bidi: plaintext; }
+    .social-arrow { margin-inline-start: auto; color: var(--yellow); font-size: 15px; }
+    footer { padding-block: 23px 30px; color: #758499; font-size: 12px; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 18px; border-top: 1px solid var(--line); padding-top: 19px; }
+    .footer-brand { color: var(--ink); font-weight: 900; }
+    @media (max-width: 950px) { .social-icons { display: none; } }
+    @media (max-width: 900px) {
+      .hero-grid { min-height: 525px; gap: 25px; }
+      .hero-art { min-height: 325px; }
+      .project-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .section-head { align-items: start; flex-direction: column; }
+      .skills-layout { gap: 25px; }
+    }
+    @media (max-width: 680px) {
+      .shell { width: min(100% - 30px, 520px); }
+      .nav { min-height: 66px; }
+      .menu-button { display: inline-grid; place-items: center; }
+      .social-icons { display: none; }
+      .nav-links { display: none; position: absolute; inset-inline: 15px; inset-block-start: 65px; flex-direction: column; align-items: stretch; gap: 0; padding: 8px; background: var(--white); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 11px 13px; border-radius: 10px; }
+      .nav-links a:hover { background: #f6f3e8; }
+      .hero-grid { display: flex; flex-direction: column; align-items: stretch; gap: 23px; padding-block: 42px 86px; }
+      .hero-art { order: -1; min-height: 245px; width: 100%; }
+      .hero-art::before { inset: 9px 0 0 4px; border-radius: 25px; }
+      .hero-art::after { width: 130px; height: 130px; inset-inline-end: -5px; }
+      .note-sheet { width: min(360px, 91%); min-height: 220px; padding: 18px 21px; border-radius: 20px; }
+      .note-sheet::before { inset-inline-start: 17px; }
+      .note-title { margin-top: 14px; font-size: 11px; }
+      .note-title strong { font-size: 19px; }
+      .sketch { width: 120px; height: 58px; margin: 3px auto; }
+      .sketch .ring { width: 104px; height: 39px; }
+      .sketch .ring.two { width: 88px; height: 52px; }
+      .sketch .core { width: 43px; height: 43px; border-radius: 14px; font-size: 16px; }
+      .floating-label { font-size: 10px; padding: 7px 10px; }
+      .label-top { inset-block-start: 14px; inset-inline-start: 0; }
+      .label-bottom { inset-block-end: 12px; inset-inline-end: 0; }
+      h1 { font-size: clamp(39px, 10.4vw, 57px); }
+      .hero-copy { font-size: 16px; }
+      .hero-actions { gap: 9px; }
+      .hero-foot { inset-block-end: 22px; gap: 13px; flex-wrap: wrap; }
+      .hero-foot span { font-size: 11px; }
+      .section { padding-block: 70px; }
+      .section-head { margin-bottom: 27px; }
+      .about-grid, .skills-layout { grid-template-columns: 1fr; }
+      .credentials { grid-template-columns: 1fr 1fr; }
+      .credential { min-height: 144px; padding: 15px; }
+      .project-grid { grid-template-columns: 1fr; }
+      .project-card { min-height: 205px; }
+      .contact-card { flex-direction: column; align-items: flex-start; gap: 22px; }
+      .social-grid { width: 100%; min-width: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .social-link { gap: 7px; padding: 8px; }
+      .social-icon { flex-basis: 30px; width: 30px; height: 30px; }
+      .footer-row { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 380px) {
+      .credentials { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .button { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <svg class="icon-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M5.2 8.6H2.1V22h3.1V8.6ZM3.65 2a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM22 14.3c0-4.03-2.15-5.91-5.02-5.91a4.33 4.33 0 0 0-3.9 2.14V8.6H10V22h3.08v-6.63c0-1.75.33-3.45 2.5-3.45 2.14 0 2.17 2.01 2.17 3.56V22H22v-7.7Z"/></symbol>
+    <symbol id="icon-facebook" viewBox="0 0 24 24"><path d="M13.5 21v-7.8h2.6l.4-3.1h-3V8.1c0-.9.25-1.5 1.53-1.5h1.63V3.8c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.07v2.27H7.67v3.1h2.66V21h3.17Z"/></symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.76-.24.76-.54v-2.08c-3.1.68-3.76-1.32-3.76-1.32-.5-1.28-1.23-1.62-1.23-1.62-1-.69.07-.68.07-.68 1.11.08 1.7 1.14 1.7 1.14 1 1.71 2.6 1.22 3.24.93.1-.72.39-1.21.7-1.49-2.48-.28-5.08-1.24-5.08-5.52 0-1.22.43-2.22 1.13-3-.11-.28-.49-1.41.11-2.94 0 0 .92-.3 3.08 1.14a10.7 10.7 0 0 1 5.61 0c2.15-1.44 3.07-1.14 3.07-1.14.6 1.53.22 2.66.11 2.94.71.78 1.13 1.78 1.13 3 0 4.29-2.6 5.24-5.09 5.52.4.35.75 1.03.75 2.06v3.06c0 .3.2.64.77.54A11.2 11.2 0 0 0 12 .8Z"/></symbol>
+    <symbol id="icon-telegram" viewBox="0 0 24 24"><path d="M21.7 3.3a1.2 1.2 0 0 0-1.3-.2L2.8 10.2c-1.1.4-1.1 1.1-.2 1.4l4.5 1.4 1.7 5.2c.2.6.1.8.7.8.5 0 .7-.2 1-.5l2.2-2.1 4.6 3.4c.9.5 1.5.2 1.7-.8l3-14.1c.3-1.1-.1-1.5-.3-1.6ZM8 12.7l9.4-5.9c.5-.3.9-.1.5.2l-7.8 7.1-.3 3.1L8 12.7Z"/></symbol>
+    <symbol id="icon-article" viewBox="0 0 24 24"><path d="M5 2.8h9.5L20 8.3v12.9H5a2 2 0 0 1-2-2V4.8a2 2 0 0 1 2-2Zm8.5 1.7v4h4M7.5 12.3h9M7.5 15.6h9M7.5 18.8h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+  <header class="topbar">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Hamza Ismael home">
+        <span class="brand-mark">HS</span>
+        <span class="brand-copy"><span>حمزة إسماعيل</span><small data-ar="ملف شخصي" data-en="Personal page">ملف شخصي</small></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about" data-ar="عنّي" data-en="About">عنّي</a>
+        <a href="#projects" data-ar="مشاريعي" data-en="Projects">مشاريعي</a>
+        <a href="#skills" data-ar="أستخدم" data-en="Skills">أستخدم</a>
+        <a href="#contact" data-ar="حساباتي" data-en="My accounts">حساباتي</a>
+      </div>
+      <div class="nav-tools">
+        <div class="social-icons" aria-label="Social accounts">
+          <a class="social-icon-link" href="https://www.instagram.com/hs.i__9/" target="_blank" rel="me noopener noreferrer" aria-label="Instagram @hs.i__9" title="Instagram"><svg class="social-mark instagram-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-instagram"></use></svg></a>
+          <a class="social-icon-link" href="https://www.linkedin.com/in/hamza-ismael-67a90a3b5/" target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn Hamza Ismael" title="LinkedIn"><svg class="social-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-linkedin"></use></svg></a>
+          <a class="social-icon-link" href="https://www.facebook.com/share/19zEkKEZdF/" target="_blank" rel="me noopener noreferrer" aria-label="Facebook profile" title="Facebook"><svg class="social-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-facebook"></use></svg></a>
+          <a class="social-icon-link" href="https://github.com/hsi-sy" target="_blank" rel="me noopener noreferrer" aria-label="GitHub hsi-sy" title="GitHub"><svg class="social-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-github"></use></svg></a>
+          <a class="social-icon-link" href="https://almaqala.blog/@hamzaismael" target="_blank" rel="me noopener noreferrer" aria-label="Almaqala profile @hamzaismael" title="Almaqala"><svg class="social-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-article"></use></svg></a>
+          <a class="social-icon-link" href="https://t.me/hmze_9" target="_blank" rel="me noopener noreferrer" aria-label="Telegram @hmze_9" title="Telegram"><svg class="social-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-telegram"></use></svg></a>
+        </div>
+        <button class="lang-button" id="languageToggle" type="button" aria-label="Switch language">English</button>
+        <button class="menu-button" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-grid shell">
+        <div class="hero-content">
+          <span class="eyebrow" data-ar="طالب صف عاشر · مهتم بالفيزياء" data-en="10th-grade student · into physics">طالب صف عاشر · مهتم بالفيزياء</span>
+          <h1><span data-ar="أنا حمزة،" data-en="I’m Hamza,">أنا حمزة،</span><br><span class="accent" data-ar="بحب أفهم، وأجرّب، وأبني." data-en="I like to learn by building.">بحب أفهم، وأجرّب، وأبني.</span></h1>
+          <p class="hero-copy" data-ar="أنا طالب من سوريا. بحب الفيزياء والبرمجة، وبحاول أطلع بتعلّمي من الدفتر لمشاريع وأفكار تفيد الناس. هون بتعرّفوا عليّ وعلى الأشياء اللي عم بشتغل عليها." data-en="I’m a student from Syria. I like physics and coding, and I try to take what I learn beyond the notebook—into projects and ideas that can help people. Here’s a little about me and what I’m working on.">أنا طالب من سوريا. بحب الفيزياء والبرمجة، وبحاول أطلع بتعلّمي من الدفتر لمشاريع وأفكار تفيد الناس. هون بتعرّفوا عليّ وعلى الأشياء اللي عم بشتغل عليها.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects"><span data-ar="شوف مشاريعي" data-en="See my projects">شوف مشاريعي</span><span aria-hidden="true">↗</span></a>
+            <a class="button button-ghost" href="#about"><span data-ar="اقرأ عنّي" data-en="A bit about me">اقرأ عنّي</span><span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Abstract sketch with initials HS, not a portrait">
+          <div class="note-sheet">
+            <div class="note-top"><span class="pin"></span><span data-ar="دفتر الملاحظات · 01" data-en="Notebook · 01">دفتر الملاحظات · 01</span></div>
+            <div class="note-title"><span data-ar="كل شي بيبلّش بسؤال" data-en="Every idea starts with a question">كل شي بيبلّش بسؤال</span><strong data-ar="شو ممكن أعمل بهالفكرة؟" data-en="What can I build from it?">شو ممكن أعمل بهالفكرة؟</strong></div>
+            <div class="sketch" aria-hidden="true"><span class="ring"></span><span class="ring two"></span><span class="core">HS</span><i class="dot"></i></div>
+            <div class="note-tags"><span>physics</span><span>code</span><span>community</span></div>
+          </div>
+          <span class="floating-label label-top" data-ar="الفيزياء" data-en="Physics">الفيزياء</span>
+          <span class="floating-label label-bottom" data-ar="فكرة ← تجربة ← مشروع" data-en="Idea → try → build">فكرة ← تجربة ← مشروع</span>
+        </div>
+        <div class="hero-foot"><span data-ar="العمر 16" data-en="Age 16">العمر 16</span><span data-ar="الصف العاشر" data-en="10th grade">الصف العاشر</span><span data-ar="سوريا" data-en="Syria">سوريا</span><span data-ar="الفريق الوطني للفيزياء" data-en="National Physics Team">الفريق الوطني للفيزياء</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="shell">
+        <div class="section-head">
+          <div><div class="section-kicker" data-ar="عنّي باختصار" data-en="A little about me">عنّي باختصار</div><h2 data-ar="بتعلّم بالتجربة." data-en="I learn by trying things out.">بتعلّم بالتجربة.</h2></div>
+          <p class="section-intro" data-ar="أنا حمزة إسماعيل، طالب صف عاشر من سوريا. اللي بشدّني هو الفيزياء والذكاء الاصطناعي والبحث العلمي، وبحب كمان أشتغل على أشياء إلها فائدة للناس." data-en="I’m Hamza Ismael, a 10th-grade student from Syria. I’m drawn to physics, AI and research, and I also like working on things that can be useful to people.">أنا حمزة إسماعيل، طالب صف عاشر من سوريا. اللي بشدّني هو الفيزياء والذكاء الاصطناعي والبحث العلمي، وبحب كمان أشتغل على أشياء إلها فائدة للناس.</p>
+        </div>
+        <div class="about-grid">
+          <article class="about-card">
+            <h3 data-ar="شو بحب أشتغل عليه؟" data-en="What I’m interested in">شو بحب أشتغل عليه؟</h3>
+            <p data-ar="بحب أفهم الفكرة منيح، وبعدين جرّب أحوّلها لشي واضح ومفيد—سواء كان صفحة ويب، أداة، أو مبادرة مع ناس تانية." data-en="I like to understand an idea first, then try to turn it into something clear and useful—a website, a tool, or an initiative with other people.">بحب أفهم الفكرة منيح، وبعدين جرّب أحوّلها لشي واضح ومفيد—سواء كان صفحة ويب، أداة، أو مبادرة مع ناس تانية.</p>
+            <div class="focus-list">
+              <div class="focus-item"><i>01</i><span data-ar="الفيزياء والتفكير العلمي" data-en="Physics and scientific thinking">الفيزياء والتفكير العلمي</span></div>
+              <div class="focus-item"><i>02</i><span data-ar="البرمجة والذكاء الاصطناعي" data-en="Coding and artificial intelligence">البرمجة والذكاء الاصطناعي</span></div>
+              <div class="focus-item"><i>03</i><span data-ar="التعليم والعمل المجتمعي" data-en="Education and community work">التعليم والعمل المجتمعي</span></div>
+            </div>
+          </article>
+          <article class="about-card">
+            <h3 data-ar="محطات بحياتي" data-en="A couple of milestones">محطات بحياتي</h3>
+            <p data-ar="شغلتين بفتخر فيهن وبكمل أتعلم من كل خطوة." data-en="Two things I’m proud of—and still learning from every step.">شغلتين بفتخر فيهن وبكمل أتعلم من كل خطوة.</p>
+            <div class="credentials" style="margin-top:19px">
+              <div class="credential"><div class="credential-top"><span data-ar="فيزياء" data-en="Physics">فيزياء</span><span>↗</span></div><h4 data-ar="عضو في الفريق الوطني السوري للفيزياء" data-en="Member of the Syrian National Physics Team">عضو في الفريق الوطني السوري للفيزياء</h4><p data-ar="مساحة أتعلم فيها وأتحدى حالي" data-en="A place to learn and challenge myself">مساحة أتعلم فيها وأتحدى حالي</p></div>
+              <div class="credential"><div class="credential-top"><span data-ar="تقدير" data-en="Recognition">تقدير</span><span>✳</span></div><h4 data-ar="شهادة تقدير من أولمبياد المعلوماتية" data-en="Certificate of Appreciation from the Informatics Olympiad">شهادة تقدير من أولمبياد المعلوماتية</h4><p data-ar="تقدير بعتز فيه" data-en="Recognition I value">تقدير بعتز فيه</p></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="shell">
+        <div class="section-head">
+          <div><div class="section-kicker" data-ar="أشياء عم بشتغل عليها" data-en="Things I’m working on">أشياء عم بشتغل عليها</div><h2 data-ar="مشاريعي" data-en="My projects">مشاريعي</h2></div>
+          <p class="section-intro" data-ar="مو كلها بنفس المرحلة، بس كل وحدة منها قريبة من اهتمام من اهتماماتي." data-en="They’re at different stages, but each one connects to something I care about.">مو كلها بنفس المرحلة، بس كل وحدة منها قريبة من اهتمام من اهتماماتي.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card"><div class="project-top"><span class="project-icon">م</span><span class="project-tag" data-ar="عمل مجتمعي" data-en="Community">عمل مجتمعي</span></div><h3 data-ar="مبادرة مسار" data-en="Masar Initiative">مبادرة مسار</h3><p data-ar="أنا مؤسس مبادرة مسار ومسؤول تنفيذي فيها. من خلال مسار بشتغل على دعم الأطفال وفتح فرص أحسن للتعلّم والحماية." data-en="I founded the Masar initiative and serve as its executive officer. Through Masar, I work on supporting children and opening better paths to learning and protection.">أنا مؤسس مبادرة مسار ومسؤول تنفيذي فيها. من خلال مسار بشتغل على دعم الأطفال وفتح فرص أحسن للتعلّم والحماية.</p></article>
+          <article class="project-card"><div class="project-top"><span class="project-icon">Y</span><span class="project-tag" data-ar="تعليم وفرص" data-en="Learning & opportunities">تعليم وفرص</span></div><h3>YourWay</h3><p data-ar="منصة بتجمع فرص المنح والدورات والبرامج التعليمية، وبتخلّي الوصول للمعلومات أوضح وأسهل للشباب." data-en="A platform bringing scholarships, courses and learning programs together, so young people can find clear information more easily.">منصة بتجمع فرص المنح والدورات والبرامج التعليمية، وبتخلّي الوصول للمعلومات أوضح وأسهل للشباب.</p></article>
+          <article class="project-card"><div class="project-top"><span class="project-icon">✓</span><span class="project-tag" data-ar="معلومات صحية" data-en="Health information">معلومات صحية</span></div><h3>Health Information Checker</h3><p data-ar="أداة تعليمية لمراجعة المعلومات الصحية والرجوع لمصادر موثوقة. الهدف نفكّر ونتحقق—مو نشخّص أو نوصف علاج." data-en="An educational tool for checking health information against reliable sources. The goal is to think and verify—not to diagnose or prescribe.">أداة تعليمية لمراجعة المعلومات الصحية والرجوع لمصادر موثوقة. الهدف نفكّر ونتحقق—مو نشخّص أو نوصف علاج.</p></article>
+          <article class="project-card"><div class="project-top"><span class="project-icon">V</span><span class="project-tag" data-ar="ملابس مطبوعة" data-en="Custom apparel">ملابس مطبوعة</span></div><h3>Void</h3><p data-ar="علامة ملابس بشتغل عليها، فيها قطع مطبوعة حسب الطلب—هوديز، بيجامات، سويترات وأشياء تانية." data-en="My clothing brand, with custom-printed pieces—hoodies, pajamas, sweaters and more.">علامة ملابس بشتغل عليها، فيها قطع مطبوعة حسب الطلب—هوديز، بيجامات، سويترات وأشياء تانية.</p></article>
+          <article class="project-card"><div class="project-top"><span class="project-icon">S</span><span class="project-tag" data-ar="منصة رقمية" data-en="Digital platform">منصة رقمية</span></div><h3>Visa Sheikh Badr</h3><p data-ar="منصة أطلقتها في الشيخ بدر. لسا عم أرتّب وصفها، وما بدي أكتب تفاصيل مش متأكد منها." data-en="A platform I launched in Sheikh Badr. I’m still putting its description together, and don’t want to add details I can’t confirm.">منصة أطلقتها في الشيخ بدر. لسا عم أرتّب وصفها، وما بدي أكتب تفاصيل مش متأكد منها.</p></article>
+        </div>
+        <div class="health-note"><strong data-ar="ملاحظة عن Health Information Checker:" data-en="About Health Information Checker:">ملاحظة عن Health Information Checker:</strong> <span data-ar="تعليمي فقط؛ ما بيشخّص، وما بيوصف علاج، وما بيستبدل الطبيب." data-en="It’s educational only; it does not diagnose, prescribe treatment or replace a clinician.">تعليمي فقط؛ ما بيشخّص، وما بيوصف علاج، وما بيستبدل الطبيب.</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="shell skills-layout">
+        <div class="skills-copy"><div class="section-kicker" data-ar="أدوات ومهارات" data-en="Tools & skills">أدوات ومهارات</div><h2 data-ar="بتعلّم وأنا عم ببني." data-en="I learn as I build.">بتعلّم وأنا عم ببني.</h2><p data-ar="بستخدم البرمجة والتصميم لأحوّل الأفكار لواجهات وأدوات، وبستكشف كيف ممكن تساعدنا أدوات الذكاء الاصطناعي." data-en="I use coding and design to turn ideas into interfaces and tools, and explore how AI can help along the way.">بستخدم البرمجة والتصميم لأحوّل الأفكار لواجهات وأدوات، وبستكشف كيف ممكن تساعدنا أدوات الذكاء الاصطناعي.</p></div>
+        <div class="skills-board" aria-label="Skills"><span class="skill-chip featured">HTML</span><span class="skill-chip featured">CSS</span><span class="skill-chip featured">JavaScript</span><span class="skill-chip">Tailwind CSS</span><span class="skill-chip">Python</span><span class="skill-chip" data-ar="تطوير واجهات" data-en="Front-end development">تطوير واجهات</span><span class="skill-chip" data-ar="تصميم" data-en="Design">تصميم</span><span class="skill-chip" data-ar="تسويق" data-en="Marketing">تسويق</span><span class="skill-chip">AI tools</span><span class="skill-chip" data-ar="بحث علمي" data-en="Scientific research">بحث علمي</span></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="shell">
+        <div class="contact-card">
+          <div class="contact-copy"><div class="section-kicker" style="color:var(--yellow)" data-ar="حساباتي" data-en="Find me online">حساباتي</div><h2 data-ar="تلاقوني هون." data-en="Find me around the web.">تلاقوني هون.</h2><p data-ar="هاي حساباتي الشخصية. إذا حابب تشوف شغلي أو تحكي معي، اختار المنصة اللي بتناسبك." data-en="These are my personal accounts. If you’d like to see what I’m working on or get in touch, choose the platform that suits you.">هاي حساباتي الشخصية. إذا حابب تشوف شغلي أو تحكي معي، اختار المنصة اللي بتناسبك.</p></div>
+          <div class="contact-action social-grid">
+            <a class="social-link" href="https://www.instagram.com/hs.i__9/" target="_blank" rel="me noopener noreferrer" aria-label="Instagram @hs.i__9"><span class="social-icon"><svg class="social-mark instagram-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-instagram"></use></svg></span><span class="social-copy"><strong>Instagram</strong><small>@hs.i__9</small></span><span class="social-arrow" aria-hidden="true">↗</span></a>
+            <a class="social-link" href="https://www.linkedin.com/in/hamza-ismael-67a90a3b5/" target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn Hamza Ismael"><span class="social-icon"><svg class="social-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-linkedin"></use></svg></span><span class="social-copy"><strong>LinkedIn</strong><small>Hamza Ismael</small></span><span class="social-arrow" aria-hidden="true">↗</span></a>
+            <a class="social-link" href="https://www.facebook.com/share/19zEkKEZdF/" target="_blank" rel="me noopener noreferrer" aria-label="Facebook profile"><span class="social-icon"><svg class="social-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-facebook"></use></svg></span><span class="social-copy"><strong>Facebook</strong><small data-ar="حسابي" data-en="My profile">حسابي</small></span><span class="social-arrow" aria-hidden="true">↗</span></a>
+            <a class="social-link" href="https://github.com/hsi-sy" target="_blank" rel="me noopener noreferrer" aria-label="GitHub hsi-sy"><span class="social-icon"><svg class="social-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-github"></use></svg></span><span class="social-copy"><strong>GitHub</strong><small>@hsi-sy</small></span><span class="social-arrow" aria-hidden="true">↗</span></a>
+            <a class="social-link" href="https://almaqala.blog/@hamzaismael" target="_blank" rel="me noopener noreferrer" aria-label="Almaqala profile @hamzaismael"><span class="social-icon"><svg class="social-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-article"></use></svg></span><span class="social-copy"><strong data-ar="المقالة" data-en="Almaqala">المقالة</strong><small>@hamzaismael</small></span><span class="social-arrow" aria-hidden="true">↗</span></a>
+            <a class="social-link" href="https://t.me/hmze_9" target="_blank" rel="me noopener noreferrer" aria-label="Telegram @hmze_9"><span class="social-icon"><svg class="social-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-telegram"></use></svg></span><span class="social-copy"><strong>Telegram</strong><small>@hmze_9</small></span><span class="social-arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="shell footer-row"><span class="footer-brand">حمزة إسماعيل</span><span data-ar="ملفي الشخصي · نسخة بسيطة عنّي وعن شغلي" data-en="My personal page · a simple look at me and my work">ملفي الشخصي · نسخة بسيطة عنّي وعن شغلي</span><span data-ar="روابطي كلها فوق" data-en="All my accounts above">روابطي كلها فوق</span></div></footer>
+  <script>
+    (() => {
+      const html = document.documentElement;
+      const langButton = document.getElementById('languageToggle');
+      const menuButton = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+      const pageTitle = { ar: 'حمزة إسماعيل — عنّي ومشاريعي', en: 'Hamza Ismael — About me & my projects' };
+      const pageDescription = {
+        ar: 'أنا حمزة إسماعيل، طالب صف عاشر من سوريا. بحب الفيزياء والبرمجة، وعم أشتغل على مشاريع بالتعليم والعمل المجتمعي.',
+        en: 'I’m Hamza Ismael, a 10th-grade student from Syria. I like physics and coding, and I’m working on projects around education and community work.'
+      };
+      function setLanguage(lang) {
+        html.lang = lang;
+        html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        document.title = pageTitle[lang];
+        document.querySelector('meta[name="description"]').content = pageDescription[lang];
+        document.querySelectorAll('[data-ar][data-en]').forEach((el) => { el.textContent = el.dataset[lang]; });
+        langButton.textContent = lang === 'ar' ? 'English' : 'العربية';
+        langButton.setAttribute('aria-label', lang === 'ar' ? 'Switch to English' : 'التبديل إلى العربية');
+        menuButton.setAttribute('aria-label', lang === 'ar' ? 'فتح القائمة' : 'Open menu');
+      }
+      langButton.addEventListener('click', () => setLanguage(html.lang === 'ar' ? 'en' : 'ar'));
+      menuButton.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+      });
+      navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+      }));
+      setLanguage('ar');
+    })();
+  </script>
+</body>
+</html>
